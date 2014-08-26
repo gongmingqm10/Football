@@ -19,16 +19,14 @@ public class FansTest {
 
     @Test
     public void shouldReactWhenTeamAWins() {
-        fansA.notifyObserver(FootballGame.A);
-        assertThat(fansA.react(), is("Yeah!!!"));
-        assertThat(fansB.react(), is("Damn it!!"));
+        assertThat(fansA.notifyObserver(FootballGame.A), is("Yeah!!!"));
+        assertThat(fansB.notifyObserver(FootballGame.A), is("Damn it!!"));
     }
 
     @Test
     public void shouldReactWhenTeamBWins() {
-        fansB.notifyObserver(FootballGame.B);
-        assertThat(fansA.react(), is("Damn it!!"));
-        assertThat(fansB.react(), is("Yeah!!!"));
+        assertThat(fansA.notifyObserver(FootballGame.B), is("Damn it!!"));
+        assertThat(fansB.notifyObserver(FootballGame.B), is("Yeah!!!"));
     }
 
 }

@@ -6,12 +6,13 @@ public class ScoreBoard implements Observer{
     private int scoreB = 0;
 
     @Override
-    public void notifyObserver(String team) {
+    public String notifyObserver(String team) {
         if ("A".equals(team)) {
             scoreA++;
         } else if ("B".equals(team)) {
             scoreB++;
         }
+        return toString();
     }
 
     @Override

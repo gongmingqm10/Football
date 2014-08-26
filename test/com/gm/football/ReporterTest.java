@@ -23,14 +23,12 @@ public class ReporterTest {
 
     @Test
     public void shouldReportWhenTeamAWin() {
-        reporter.notifyObserver(FootballGame.A);
-        assertThat(reporter.report(), is("Team A win a goal"));
+        assertThat(reporter.notifyObserver(FootballGame.A), is("Team A win a goal"));
     }
 
     @Test
     public void shouldReportWhenTeamBWin() {
-        reporter.notifyObserver(FootballGame.B);
-        assertThat(reporter.report(), is("Team B win a goal"));
+        assertThat(reporter.notifyObserver(FootballGame.B), is("Team B win a goal"));
     }
 
 }
